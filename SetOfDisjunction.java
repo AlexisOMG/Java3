@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 public class SetOfDisjunction implements Iterable<Disjunction> {
     private int size;
-    Disjunction[] arr;
+    private Disjunction[] arr;
     public SetOfDisjunction(int size) {
         this.size = size;
         this.arr = new Disjunction[this.size];
@@ -14,7 +14,9 @@ public class SetOfDisjunction implements Iterable<Disjunction> {
     public void initDis(int ind, int n, boolean[] val) {
         this.arr[ind] = new Disjunction(ind, n, val);
     }
-
+    public void setDis(int ind, int n, String[] val) {
+        this.arr[ind].setValues(n, val);
+    }
     private class DisjunctionIterator implements Iterator<Disjunction> {
         private int ind;
         public DisjunctionIterator() {

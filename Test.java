@@ -7,10 +7,16 @@ public class Test {
         for (Disjunction i: test) {
             System.out.println(i.getInd() + " object: " + i);
         }
-        test.initDis(1, 4, new boolean[]{true, true, true, true});
-        System.out.println("Edited:");
+        test.setDis(1, 1, new String[] {"x2"});
+        System.out.println("\nEdited:");
         for (Disjunction j: test) {
             System.out.println(j.getInd() + " object: " + j);
+        }
+        System.out.print("\n");
+        for (Disjunction i: test) {
+            for (Disjunction j: test) {
+                System.out.println(i.getInd() + " " + j.getInd());
+            }
         }
     }
 }
